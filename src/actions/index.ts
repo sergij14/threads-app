@@ -1,3 +1,4 @@
+'use server';
 import { createComment } from "./createComment";
 import { createPost } from "./createPost";
 import { createTopic } from "./createTopic";

@@ -1,3 +1,4 @@
+import { auth } from "@/utils/auth";
 import z from "zod";
 
 const createTopicSchema = z.object({
@@ -21,6 +22,15 @@ export const createTopic = async (formState: CreateTopicFormState, formdata: For
 
     if (!result.success) {
         return { errors: result.error.flatten().fieldErrors }
+    }
+
+    const session = await auth();
+    if (!session || !session?.user) {
+        return {
+            errors: {
+                _form: ['You must be signed in']
+            }
+        }
     }
 
     return {

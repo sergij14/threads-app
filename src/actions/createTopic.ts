@@ -1,4 +1,9 @@
+import { db } from "@/db";
 import { auth } from "@/utils/auth";
+import paths from "@/utils/paths";
+import { Topic } from "@prisma/client";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import z from "zod";
 
 const createTopicSchema = z.object({
@@ -33,9 +38,32 @@ export const createTopic = async (formState: CreateTopicFormState, formdata: For
         }
     }
 
-    return {
-        errors: {}
+    let topic: Topic;
+    try {
+        topic = await db.topic.create({
+            data: {
+                slug: result.data.name,
+                description: result.data.description
+            }
+        })
+
+    } catch (err: unknown) {
+        if (err instanceof Error) {
+            return {
+                errors: {
+                    _form: [err.message]
+                }
+            }
+        }
+
+        return {
+            errors: {
+                _form: ['Something went wrong']
+            }
+        }
+
     }
 
-    // TODO: revalidate the homepage
+    revalidatePath('/')
+    redirect(paths.topicView(topic.slug))
 }

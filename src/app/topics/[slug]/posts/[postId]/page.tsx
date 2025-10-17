@@ -1,4 +1,5 @@
 import CommentCreateForm from '@/components/comments/CommentCreateForm';
+import CommentList from '@/components/comments/CommentList';
 import PostView from '@/components/posts/PostView';
 import paths from '@/utils/paths';
 import Link from 'next/link';
@@ -13,6 +14,7 @@ async function PostViewPage({ params }: { params: Promise<{ postId: string, slug
             </Link>
             <PostView postId={postId} />
             <CommentCreateForm postId={postId} startOpen />
+            <CommentList postId={postId} />
         </div>
     )
 }

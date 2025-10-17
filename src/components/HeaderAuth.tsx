@@ -1,5 +1,4 @@
 'use client'
-import React from 'react'
 import { signIn, signOut } from '@/actions';
 import { Avatar, Button } from '@/utils/ui';
 import { useSession } from 'next-auth/react';

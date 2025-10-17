@@ -1,5 +1,5 @@
 'use client'
-import React, { useActionState } from 'react'
+import { useActionState } from 'react'
 import { Input, Button, Textarea, Popover, PopoverTrigger, PopoverContent, Alert } from '@/utils/ui'
 import { createPost } from '@/actions'
 

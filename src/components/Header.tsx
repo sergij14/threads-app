@@ -1,4 +1,3 @@
-import React from 'react'
 import { Input, Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@/utils/ui';
 import Link from 'next/link';
 import HeaderAuth from './HeaderAuth';

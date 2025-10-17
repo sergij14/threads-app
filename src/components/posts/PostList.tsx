@@ -1,7 +1,6 @@
 import { PostWithData } from '@/utils/db/queries/posts'
 import paths from '@/utils/paths';
 import Link from 'next/link';
-import React from 'react'
 
 async function PostList({ fetchData }: { fetchData: () => Promise<PostWithData[]> }) {
     const posts = await fetchData();

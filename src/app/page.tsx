@@ -1,4 +1,3 @@
-import React from 'react'
 import TopicCreateForm from '@/components/topics/TopicCreateForm'
 import TopicList from '@/components/topics/TopicList'
 import { Divider } from '@/utils/ui'

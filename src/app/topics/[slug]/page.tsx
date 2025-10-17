@@ -1,7 +1,6 @@
 import PostCreateForm from '@/components/posts/PostCreateForm';
 import PostList from '@/components/posts/PostList';
 import { fetchPostsByTopicSlug } from '@/utils/db/queries/posts';
-import React from 'react'
 
 async function TopicViewPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;

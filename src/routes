@@ -1,0 +1,11 @@
+home
+/
+
+topic show
+/topics/[slug]
+
+create posts
+/topics/[slug]/posts/new
+
+show a post
+/topics/[slug]/posts/[postId]

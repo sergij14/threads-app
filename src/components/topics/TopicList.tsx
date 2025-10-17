@@ -7,7 +7,7 @@ async function TopicList() {
     const topics = await db.topic.findMany();
 
     return (
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap">
             {topics.map(({ slug, id }) => <Link key={id} href={paths.topicView(slug)}>
                 <Chip >{slug}</Chip>
             </Link>

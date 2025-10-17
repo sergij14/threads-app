@@ -7,7 +7,7 @@ function HomePage() {
     <div className='col-span-3'>
       <h3 className='text-xl my-2'>Top Posts</h3>
     </div>
-    <div className='flex flex-col border border-gray-200 p-4 rounded-2xl'>
+    <div className='flex flex-col border border-gray-200 p-4 rounded-2xl justify-end'>
       <TopicCreateForm />
       <Divider className='my-2' />
       <h3 className='text-lg mb-2'>Topics</h3>

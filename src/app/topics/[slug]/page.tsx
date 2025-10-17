@@ -11,7 +11,7 @@ async function TopicViewPage({ params }: { params: Promise<{ slug: string }> }) 
                 <h2 className='text-2xl font-bold mb-2'>{slug}</h2>
                 <PostList fetchData={() => fetchPostsByTopicSlug(slug)} />
             </div>
-            <div className='flex flex-col border border-gray-200 p-4 rounded-2xl'>
+            <div className='mb-auto justify-self-end'>
                 <PostCreateForm slug={slug} />
             </div>
         </div>

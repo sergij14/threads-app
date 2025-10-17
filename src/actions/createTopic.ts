@@ -1,4 +1,4 @@
-import { db } from "@/db";
+import { db } from "@/utils/db";
 import { auth } from "@/utils/auth";
 import paths from "@/utils/paths";
 import { Topic } from "@prisma/client";

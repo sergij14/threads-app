@@ -4,7 +4,7 @@ import { Input, Button, Textarea, Popover, PopoverTrigger, PopoverContent, Alert
 import { createTopic } from '@/actions'
 
 function TopicCreateForm() {
-    const [formstate, action] = useActionState(createTopic, {
+    const [formstate, action, isPending] = useActionState(createTopic, {
         errors: {}
     });
 
@@ -24,7 +24,7 @@ function TopicCreateForm() {
                             isInvalid={!!formstate.errors?.description} errorMessage={formstate.errors?.description?.join(', ')} />
 
                         {formstate.errors?._form ? <Alert color="danger" title={formstate.errors?._form.join(', ')} /> : null}
-                        <Button type='submit'>Create</Button>
+                        <Button isLoading={isPending} type='submit'>Create</Button>
                     </div>
                 </form>
             </PopoverContent>

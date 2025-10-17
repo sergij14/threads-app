@@ -8,3 +8,9 @@ export const signIn = async () => {
 export const signOut = async () => {
     return auth.signOut()
 }
+
+export const createComment = async () => { }
+
+export const createPost = async () => { }
+
+export const createTopic = async () => { }

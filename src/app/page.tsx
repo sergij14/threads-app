@@ -1,11 +1,9 @@
-'use client';
-import { Button } from '@heroui/react'
 import React from 'react'
 
-function HomePage() {
+async function HomePage() {
   return (
     <div>
-      <Button>click</Button>
+      app
     </div>
   )
 }

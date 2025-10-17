@@ -2,7 +2,7 @@ import { PostWithData } from '@/utils/db/queries/posts'
 import paths from '@/utils/paths';
 import Link from 'next/link';
 
-async function PostList({ fetchData }: { fetchData: () => Promise<PostWithData[]> }) {
+export default async function PostList({ fetchData }: { fetchData: () => Promise<PostWithData[]> }) {
     const posts = await fetchData();
 
     return (
@@ -20,5 +20,3 @@ async function PostList({ fetchData }: { fetchData: () => Promise<PostWithData[]
         </div>
     )
 }
-
-export default PostList

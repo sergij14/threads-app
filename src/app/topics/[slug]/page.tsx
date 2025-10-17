@@ -2,7 +2,7 @@ import PostCreateForm from '@/components/posts/PostCreateForm';
 import PostList from '@/components/posts/PostList';
 import { fetchPostsByTopicSlug } from '@/utils/db/queries/posts';
 
-async function TopicViewPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function TopicViewPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
     return (
@@ -17,5 +17,3 @@ async function TopicViewPage({ params }: { params: Promise<{ slug: string }> }) 
         </div>
     )
 }
-
-export default TopicViewPage

@@ -3,7 +3,7 @@ import paths from "@/utils/paths";
 import { Chip } from "@/utils/ui"
 import Link from "next/link";
 
-async function TopicList() {
+export default async function TopicList() {
     const topics = await db.topic.findMany();
 
     return (
@@ -15,5 +15,3 @@ async function TopicList() {
         </div>
     )
 }
-
-export default TopicList

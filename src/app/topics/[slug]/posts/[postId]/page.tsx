@@ -4,7 +4,7 @@ import PostView from '@/components/posts/PostView';
 import paths from '@/utils/paths';
 import Link from 'next/link';
 
-async function PostViewPage({ params }: { params: Promise<{ postId: string, slug: string }> }) {
+export default async function PostViewPage({ params }: { params: Promise<{ postId: string, slug: string }> }) {
     const { postId, slug } = await params;
 
     return (
@@ -18,5 +18,3 @@ async function PostViewPage({ params }: { params: Promise<{ postId: string, slug
         </div>
     )
 }
-
-export default PostViewPage

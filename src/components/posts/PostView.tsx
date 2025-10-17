@@ -1,7 +1,7 @@
 import { db } from "@/utils/db";
 import { notFound } from "next/navigation";
 
-async function PostView({ postId }: { postId: string }) {
+export default async function PostView({ postId }: { postId: string }) {
     const post = await db.post.findFirst({
         where: { id: postId }
     })
@@ -15,5 +15,3 @@ async function PostView({ postId }: { postId: string }) {
         </div>
     )
 }
-
-export default PostView

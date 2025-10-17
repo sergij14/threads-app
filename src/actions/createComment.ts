@@ -18,11 +18,11 @@ interface CreateCommentFormState {
     success?: boolean;
 }
 
-export async function createComment(
+export const createComment = async (
     { postId, parentId }: { postId: string; parentId?: string },
     formState: CreateCommentFormState,
     formData: FormData
-): Promise<CreateCommentFormState> {
+): Promise<CreateCommentFormState> => {
     const result = createCommentSchema.safeParse({
         content: formData.get("content"),
     });
@@ -34,7 +34,7 @@ export async function createComment(
         };
     }
 
-    
+
 
     const session = await auth();
     if (!session || !session.user) {

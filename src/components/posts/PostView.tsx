@@ -2,6 +2,7 @@ import { db } from "@/utils/db";
 import { notFound } from "next/navigation";
 
 export default async function PostView({ postId }: { postId: string }) {
+    await new Promise(res => setTimeout(res, 3000))
     const post = await db.post.findFirst({
         where: { id: postId }
     })

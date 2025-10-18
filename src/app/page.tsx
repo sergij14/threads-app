@@ -4,6 +4,8 @@ import TopicList from '@/components/topics/TopicList'
 import { fetchTopPosts } from '@/utils/db/queries/posts'
 import { Divider } from '@/utils/ui'
 
+export const revalidate = 180; 
+
 function HomePage() {
   return <div className='grid grid-cols-4 gap-4'>
     <div className='col-span-3'>

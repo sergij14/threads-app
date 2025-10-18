@@ -1,4 +1,5 @@
 import { db } from "@/utils/db";
+import { Divider } from "@/utils/ui";
 import { notFound } from "next/navigation";
 
 export default async function PostView({ postId }: { postId: string }) {
@@ -10,9 +11,9 @@ export default async function PostView({ postId }: { postId: string }) {
     if (!post) return notFound();
 
     return (
-        <div className='mt-2 flex flex-col gap-2'>
-            <h4 className='text-lg font-bold'>{post.title}</h4>
-            <p className="border border-gray-200 p-4">{post.content}</p>
+        <div className='mt-4 border border-gray-200 p-4 rounded-3xl' key={post.id}>
+                <h4 className='text-lg font-bold'>{post.title}</h4>
+                <p>{post.content}</p>
         </div>
     )
 }
